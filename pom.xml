@@ -5,12 +5,8 @@
 	<groupId>opencart_cucumber_framework</groupId>
 	<artifactId>opencart_cucumber_framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	
-	
-	
 
-	<build> 	
+	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -28,55 +24,36 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.11.0</version>
 				</plugin>
-				
-				<plugin>
+			<!-- Add the JaCoCo plugin configuration -->
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.8</version>
+				<version>0.8.7</version>
 				<executions>
 					<execution>
+						<id>prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
 					<execution>
 						<id>report</id>
-						<phase>prepare-package</phase>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<configuration>
-					<includeTests>true</includeTests>
-					<minimumTokens>10</minimumTokens>
-					<targetJdk>11</targetJdk>
-					<rulesets>
-						<ruleset>/category/java/bestpractices.xml</ruleset>
-						<ruleset>/category/java/codestyle.xml</ruleset>
-					</rulesets>
-					<failOnViolation>false</failOnViolation>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>pmd</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			
-			     <plugin>
+
+				<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.7.0.1746</version>
 			      </plugin>
-
-
+				
+				
+				
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -169,16 +146,16 @@
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.13.0</version>
 		</dependency>
-
+		
 		<!-- Other dependencies -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.20</version> <!-- Replace with your Lombok version -->
-			<scope>provided</scope> <!-- Change 'provided' to 'compile' if needed -->
-		</dependency>
-
-		<!--
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.20</version> <!-- Replace with your Lombok version -->
+    <scope>provided</scope> <!-- Change 'provided' to 'compile' if needed -->
+  </dependency>
+  
+  <!--
 		https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
 		<dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
