@@ -23,6 +23,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.11.0</version>
+				</plugin>
+				<!-- Add the JaCoCo plugin configuration -->
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
@@ -48,6 +50,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
 
 	<dependencies>
 
@@ -136,14 +139,15 @@
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.13.0</version>
 		</dependency>
-		
+
 		<!-- Other dependencies -->
-  <dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.20</version> <!-- Replace with your Lombok version -->
-    <scope>provided</scope> <!-- Change 'provided' to 'compile' if needed -->
-  </dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version> <!-- Replace with your Lombok version -->
+			<scope>provided</scope> <!-- Change 'provided' to 'compile' if needed -->
+		</dependency>
+
 		<!--
 		https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
 		<dependency>
